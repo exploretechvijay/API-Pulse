@@ -1,28 +1,49 @@
-# API Pulse
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg">
+    <img src="docs/logo-light.svg" alt="API Pulse" width="380">
+  </picture>
+</p>
 
-[![CI](https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml/badge.svg)](https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/github/package-json/v/exploretechvijay/API-Pulse?label=version&color=2a78d6)](CHANGELOG.md)
-[![GitHub stars](https://img.shields.io/github/stars/exploretechvijay/API-Pulse?style=flat&logo=github)](https://github.com/exploretechvijay/API-Pulse/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/exploretechvijay/API-Pulse?style=flat&logo=github)](https://github.com/exploretechvijay/API-Pulse/network/members)
-[![Open issues](https://img.shields.io/github/issues/exploretechvijay/API-Pulse)](https://github.com/exploretechvijay/API-Pulse/issues)
-[![Last commit](https://img.shields.io/github/last-commit/exploretechvijay/API-Pulse)](https://github.com/exploretechvijay/API-Pulse/commits/main)
+<h3 align="center">Self-hosted API monitoring, latency testing on simulated networks,<br>and load / stress testing – in one dashboard.</h3>
 
-[![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white)](https://nodejs.org)
-[![React](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/react?filename=web%2Fpackage.json&logo=react&logoColor=white&color=149eca)](web/package.json)
-[![Express](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/express?filename=server%2Fpackage.json&logo=express&logoColor=white&color=555)](server/package.json)
-[![SQLite](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/better-sqlite3?filename=server%2Fpackage.json&label=better-sqlite3&logo=sqlite&logoColor=white&color=003b57)](server/package.json)
-[![Docker](https://img.shields.io/badge/docker-ready-2496ed?logo=docker&logoColor=white)](#option-a--docker-recommended)
-[![Self-hosted](https://img.shields.io/badge/self--hosted-no%20SaaS-0ca30c)](#setup-guide)
+<p align="center">
+  Know whether your APIs are <b>up</b>, <b>how fast</b> they are for real users (from fibre to 2G),
+  and <b>how much traffic</b> they can take before they break.<br>
+  One app instead of three tools – no SaaS, no per-check pricing, and your data never leaves your infrastructure.
+</p>
 
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![Security policy](https://img.shields.io/badge/security-policy-d03b3b)](SECURITY.md)
+<p align="center">
+  <a href="https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml"><img src="https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/github/package-json/v/exploretechvijay/API-Pulse?label=version&color=2a78d6" alt="Version"></a>
+  <a href="https://github.com/exploretechvijay/API-Pulse/stargazers"><img src="https://img.shields.io/github/stars/exploretechvijay/API-Pulse?style=flat&logo=github" alt="GitHub stars"></a>
+  <a href="https://github.com/exploretechvijay/API-Pulse/network/members"><img src="https://img.shields.io/github/forks/exploretechvijay/API-Pulse?style=flat&logo=github" alt="GitHub forks"></a>
+  <a href="https://github.com/exploretechvijay/API-Pulse/issues"><img src="https://img.shields.io/github/issues/exploretechvijay/API-Pulse" alt="Open issues"></a>
+  <a href="https://github.com/exploretechvijay/API-Pulse/commits/main"><img src="https://img.shields.io/github/last-commit/exploretechvijay/API-Pulse" alt="Last commit"></a>
+  <br>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white" alt="Node.js 20+"></a>
+  <a href="web/package.json"><img src="https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/react?filename=web%2Fpackage.json&logo=react&logoColor=white&color=149eca" alt="React"></a>
+  <a href="server/package.json"><img src="https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/express?filename=server%2Fpackage.json&logo=express&logoColor=white&color=555" alt="Express"></a>
+  <a href="server/package.json"><img src="https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/better-sqlite3?filename=server%2Fpackage.json&label=better-sqlite3&logo=sqlite&logoColor=white&color=003b57" alt="better-sqlite3"></a>
+  <a href="#option-a--docker-recommended"><img src="https://img.shields.io/badge/docker-ready-2496ed?logo=docker&logoColor=white" alt="Docker ready"></a>
+  <a href="#setup-guide"><img src="https://img.shields.io/badge/self--hosted-no%20SaaS-0ca30c" alt="Self-hosted"></a>
+  <br>
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome"></a>
+  <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant 2.1"></a>
+  <a href="SECURITY.md"><img src="https://img.shields.io/badge/security-policy-d03b3b" alt="Security policy"></a>
+</p>
 
-**Self-hosted API monitoring, latency testing on simulated networks, and load / stress testing – in one dashboard.**
+<p align="center">
+  <a href="#setup-guide"><b>Setup guide</b></a> ·
+  <a href="#feature-tour"><b>Feature tour</b></a> ·
+  <a href="#use-it-from-cicd"><b>CI/CD</b></a> ·
+  <a href="CONTRIBUTING.md"><b>Contributing</b></a> ·
+  <a href="CHANGELOG.md"><b>Changelog</b></a>
+</p>
 
-API Pulse tells your team, on a single screen, whether your APIs are **up**, **how fast** they respond for real users (from fibre to 2G), and **how much traffic** they can take before they break. It replaces three separate tools – an uptime monitor, a latency tester and a load-testing tool – with one app you run on your own server. No SaaS, no per-check pricing, and your data never leaves your infrastructure.
-
-![Dashboard](docs/screenshots/dashboard.png)
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="API Pulse dashboard" width="100%">
+</p>
 
 ---
 
