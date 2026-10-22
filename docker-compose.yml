@@ -1,0 +1,46 @@
+# API Pulse – self-hosted
+#
+#   cp .env.example .env        # set APP_SECRET (and optionally ADMIN_EMAIL/ADMIN_PASSWORD)
+#   docker compose up -d        # → http://localhost:8080
+#
+# With automatic HTTPS (Let's Encrypt) via Caddy – set DOMAIN in .env and point DNS at this host:
+#   docker compose --profile https up -d
+services:
+  api-pulse:
+    build: .
+    image: api-pulse:latest
+    container_name: api-pulse
+    restart: unless-stopped          # crash → automatic restart; monitors resume from the database
+    init: true                       # tini as PID 1: proper signal handling, crashes exit the container
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATA_DIR: /data
+    ports:
+      - "${PULSE_PORT:-8080}:8080"
+    volumes:
+      - pulse-data:/data
+      # optional: declarative config applied (merge) on every start
+      # - ./examples/api-pulse.config.yaml:/config/api-pulse.yaml:ro
+    # ulimits help high-concurrency load tests
+    ulimits:
+      nofile: { soft: 65535, hard: 65535 }
+
+  caddy:
+    image: caddy:2.8.4
+    profiles: ["https"]
+    restart: unless-stopped
+    depends_on: [api-pulse]
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+
+volumes:
+  pulse-data:
+  caddy-data:

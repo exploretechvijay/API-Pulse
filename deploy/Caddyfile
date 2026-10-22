@@ -1,0 +1,7 @@
+{$DOMAIN} {
+	encode gzip
+	reverse_proxy api-pulse:8080 {
+		# keep Server-Sent Events streaming
+		flush_interval -1
+	}
+}

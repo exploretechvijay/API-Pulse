@@ -1,0 +1,118 @@
+# Example API Pulse configuration.
+# Import it under Settings → Import / export, or mount it and set CONFIG_FILE to apply it on every start.
+# Objects are matched by name, so re-importing updates instead of duplicating.
+apiPulse: 1
+
+settings:
+  defaults:
+    intervalSec: 60
+    timeoutMs: 10000
+    failureThreshold: 3
+  retention:
+    rawDays: 30
+    rollupDays: 365
+  loadAllowlist:
+    - localhost
+    - "*.staging.example.com"
+
+variables:
+  - name: BASE_URL
+    value: https://staging.example.com
+    isSecret: false
+  - name: API_TOKEN
+    value: change-me          # stored encrypted; exports show it as ••••••••
+    isSecret: true
+
+networkProfiles:
+  - name: Rural 3G (India)
+    downloadKbps: 750
+    uploadKbps: 250
+    latencyMs: 350
+    jitterMs: 80
+    packetLoss: 2
+
+channels:
+  - name: oncall-slack
+    type: slack
+    isDefault: true
+    config:
+      webhookUrl: https://hooks.slack.com/services/XXX/YYY/ZZZ
+  - name: oncall-email
+    type: email
+    config:
+      host: smtp.example.com
+      port: 587
+      username: alerts@example.com
+      password: change-me
+      from: API Pulse <alerts@example.com>
+      to: oncall@example.com
+
+monitors:
+  - name: Checkout API – health
+    environment: production
+    tags: [checkout, critical]
+    request:
+      method: GET
+      url: "{{BASE_URL}}/health"
+    intervalSec: 30
+    failureThreshold: 3
+    rules:
+      expectedStatus: 200-299
+      degradedMs: 800
+      jsonPath: status
+      jsonExpected: ok
+    alerts:
+      onDown: true
+      onDegraded: true
+      onRecovery: true
+      channels: [oncall-slack, oncall-email]
+      reminderMinutes: 30
+    showOnStatusPage: true
+
+  - name: Orders API – list
+    environment: staging
+    request:
+      method: GET
+      url: "{{BASE_URL}}/api/orders"
+    auth:
+      type: bearer
+      token: "{{API_TOKEN}}"
+    rules:
+      expectedStatus: "200"
+
+maintenanceWindows:
+  - name: Sunday deploy window
+    startsAt: 2026-10-18T02:00:00Z
+    endsAt: 2026-10-18T03:00:00Z
+    recurrence: weekly
+    monitors: []                # empty = all monitors
+
+tests:
+  - name: Checkout – mobile latency
+    kind: latency
+    config:
+      request: { method: GET, url: "{{BASE_URL}}/health" }
+      count: 50
+      profiles: [No throttling, 4G, Slow 3G]
+    passCriteria:
+      maxP95Ms: 3000
+    schedule: { enabled: true, type: daily, time: "02:30" }
+
+  - name: Checkout – stress
+    kind: load
+    config:
+      mode: stress
+      loadType: vus
+      steps:
+        - name: health
+          request: { method: GET, url: "{{BASE_URL}}/health" }
+      stress:
+        start: 10
+        step: 20
+        stepDurationSec: 30
+        max: 500
+        stopErrorRate: 5
+        stopP95Ms: 2000
+        stopOnPlateau: true
+    passCriteria:
+      maxErrorRate: 1
