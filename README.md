@@ -20,6 +20,7 @@
   <a href="https://github.com/exploretechvijay/API-Pulse/network/members"><img src="https://img.shields.io/github/forks/exploretechvijay/API-Pulse?style=flat&logo=github" alt="GitHub forks"></a>
   <a href="https://github.com/exploretechvijay/API-Pulse/issues"><img src="https://img.shields.io/github/issues/exploretechvijay/API-Pulse" alt="Open issues"></a>
   <a href="https://github.com/exploretechvijay/API-Pulse/commits/main"><img src="https://img.shields.io/github/last-commit/exploretechvijay/API-Pulse" alt="Last commit"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/exploretechvijay/API-Pulse?color=blue" alt="MIT license"></a>
   <br>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white" alt="Node.js 20+"></a>
   <a href="web/package.json"><img src="https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/react?filename=web%2Fpackage.json&logo=react&logoColor=white&color=149eca" alt="React"></a>
@@ -31,6 +32,10 @@
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome"></a>
   <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant 2.1"></a>
   <a href="SECURITY.md"><img src="https://img.shields.io/badge/security-policy-d03b3b" alt="Security policy"></a>
+</p>
+
+<p align="center">
+  ⭐ <b>If API Pulse is useful to you, please <a href="https://github.com/exploretechvijay/API-Pulse/stargazers">star the repo</a></b> – it helps other developers find it.
 </p>
 
 <p align="center">
@@ -63,6 +68,7 @@
 - [Troubleshooting](#troubleshooting)
 - [Roadmap](#roadmap)
 - [Community & contributing](#community--contributing)
+- [License](#license)
 
 ---
 
@@ -460,3 +466,9 @@ Contributions of all sizes are welcome – bug reports, ideas, docs and code.
 | 📝 **What changed?** | See the [CHANGELOG](CHANGELOG.md) |
 
 If API Pulse is useful to you, please ⭐ **star the repository** – it helps others find it.
+
+---
+
+## License
+
+API Pulse is open source under the [MIT License](LICENSE). You can use, modify and distribute it freely, including commercially, as long as the copyright notice is kept.

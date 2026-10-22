@@ -1,6 +1,6 @@
 # Contributing to API Pulse
 
-Thanks for your interest in improving API Pulse! Bug reports, ideas, documentation fixes and code are all welcome. By taking part you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Thanks for your interest in improving API Pulse! Bug reports, ideas, documentation fixes and code are all welcome. By taking part you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md), and by submitting a contribution you agree that it is licensed under the project's [MIT License](LICENSE).
 
 ## Ways to contribute
 
