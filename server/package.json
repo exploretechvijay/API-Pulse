@@ -15,6 +15,6 @@
     "better-sqlite3": "^11.3.0",
     "express": "^4.21.1",
     "js-yaml": "^4.1.0",
-    "nodemailer": "^10.1.2"
+    "nodemailer": "^10.1.7"
   }
 }
