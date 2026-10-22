@@ -1,0 +1,19 @@
+{
+  "name": "api-pulse-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.1",
+    "js-yaml": "^4.1.0",
+    "nodemailer": "^10.1.2"
+  }
+}
