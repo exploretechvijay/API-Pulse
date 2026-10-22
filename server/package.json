@@ -2,6 +2,7 @@
   "name": "api-pulse-server",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
