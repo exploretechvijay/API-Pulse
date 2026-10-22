@@ -1,0 +1,81 @@
+name: Bug report
+description: Something in API Pulse does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. **Do not report security vulnerabilities here** – see [SECURITY.md](../blob/main/SECURITY.md).
+        Please remove secrets (tokens, passwords, internal URLs) from logs and screenshots before posting.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to Load test → Stress
+        2. Set …
+        3. Click Run test…
+        4. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Monitoring / dashboard
+        - Alerts & channels
+        - Latency test
+        - Load / stress test
+        - Network profiles
+        - Configuration import/export
+        - Users, roles & settings
+        - Installation / Docker
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How do you run API Pulse?
+      options:
+        - Docker Compose
+        - Docker (other)
+        - Node.js (npm start)
+        - Development (npm run dev)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: API Pulse version / commit
+      placeholder: 1.0.0 or commit SHA
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 130 on Windows 11
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server logs
+      description: Output of `docker compose logs api-pulse` (or the terminal running `npm start`) around the time of the problem.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag and drop images here if they help explain the problem.

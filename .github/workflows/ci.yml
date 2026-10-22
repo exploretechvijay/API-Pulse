@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    name: Tests & build (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - name: Unit tests
+        run: npm test
+        env:
+          DATA_DIR: ${{ runner.temp }}/pulse-data
+      - name: Build web UI
+        run: npm run build
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t api-pulse:ci .
+      - name: Smoke test
+        run: |
+          docker run -d --name pulse -p 8080:8080 -e APP_SECRET=ci-secret api-pulse:ci
+          for i in $(seq 1 30); do
+            if curl -fs http://localhost:8080/api/healthz; then exit 0; fi
+            sleep 1
+          done
+          docker logs pulse
+          exit 1

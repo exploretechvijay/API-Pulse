@@ -1,5 +1,23 @@
 # API Pulse
 
+[![CI](https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml/badge.svg)](https://github.com/exploretechvijay/API-Pulse/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/github/package-json/v/exploretechvijay/API-Pulse?label=version&color=2a78d6)](CHANGELOG.md)
+[![GitHub stars](https://img.shields.io/github/stars/exploretechvijay/API-Pulse?style=flat&logo=github)](https://github.com/exploretechvijay/API-Pulse/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/exploretechvijay/API-Pulse?style=flat&logo=github)](https://github.com/exploretechvijay/API-Pulse/network/members)
+[![Open issues](https://img.shields.io/github/issues/exploretechvijay/API-Pulse)](https://github.com/exploretechvijay/API-Pulse/issues)
+[![Last commit](https://img.shields.io/github/last-commit/exploretechvijay/API-Pulse)](https://github.com/exploretechvijay/API-Pulse/commits/main)
+
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![React](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/react?filename=web%2Fpackage.json&logo=react&logoColor=white&color=149eca)](web/package.json)
+[![Express](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/express?filename=server%2Fpackage.json&logo=express&logoColor=white&color=555)](server/package.json)
+[![SQLite](https://img.shields.io/github/package-json/dependency-version/exploretechvijay/API-Pulse/better-sqlite3?filename=server%2Fpackage.json&label=better-sqlite3&logo=sqlite&logoColor=white&color=003b57)](server/package.json)
+[![Docker](https://img.shields.io/badge/docker-ready-2496ed?logo=docker&logoColor=white)](#option-a--docker-recommended)
+[![Self-hosted](https://img.shields.io/badge/self--hosted-no%20SaaS-0ca30c)](#setup-guide)
+
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![Security policy](https://img.shields.io/badge/security-policy-d03b3b)](SECURITY.md)
+
 **Self-hosted API monitoring, latency testing on simulated networks, and load / stress testing – in one dashboard.**
 
 API Pulse tells your team, on a single screen, whether your APIs are **up**, **how fast** they respond for real users (from fibre to 2G), and **how much traffic** they can take before they break. It replaces three separate tools – an uptime monitor, a latency tester and a load-testing tool – with one app you run on your own server. No SaaS, no per-check pricing, and your data never leaves your infrastructure.
@@ -23,6 +41,7 @@ API Pulse tells your team, on a single screen, whether your APIs are **up**, **h
 - [Security](#security)
 - [Troubleshooting](#troubleshooting)
 - [Roadmap](#roadmap)
+- [Community & contributing](#community--contributing)
 
 ---
 
@@ -403,3 +422,20 @@ docs/screenshots/       images used in this README
 - Single sign-on (Google, Microsoft, Okta)
 
 The original requirements are in [API Pulse — Business Requirements Document.md](API%20Pulse%20—%20Business%20Requirements%20Document.md) and the build plan is in [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
+
+---
+
+## Community & contributing
+
+Contributions of all sizes are welcome – bug reports, ideas, docs and code.
+
+| | |
+| --- | --- |
+| 🐞 **Found a bug?** | Open a [bug report](https://github.com/exploretechvijay/API-Pulse/issues/new/choose) |
+| 💡 **Have an idea?** | Open a [feature request](https://github.com/exploretechvijay/API-Pulse/issues/new/choose) |
+| 🛠️ **Want to contribute code?** | Read [CONTRIBUTING.md](CONTRIBUTING.md) – setup, project structure, guidelines and the PR process |
+| 🤝 **Code of Conduct** | We follow the [Contributor Covenant](CODE_OF_CONDUCT.md) |
+| 🔒 **Security issue?** | Please report it privately – see [SECURITY.md](SECURITY.md) |
+| 📝 **What changed?** | See the [CHANGELOG](CHANGELOG.md) |
+
+If API Pulse is useful to you, please ⭐ **star the repository** – it helps others find it.
