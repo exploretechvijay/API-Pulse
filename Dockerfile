@@ -1,5 +1,5 @@
 # ---------- build: install deps (incl. native better-sqlite3) and build the web UI ----------
-FROM node:20-bookworm AS build
+FROM node:25-bookworm AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 COPY server/package.json server/
@@ -11,7 +11,7 @@ RUN npm run build --workspace web \
  && npm ci --omit=dev --workspace server --include-workspace-root=false
 
 # ---------- runtime ----------
-FROM node:20-bookworm-slim
+FROM node:25-bookworm-slim
 ENV NODE_ENV=production \
     PORT=8080 \
     DATA_DIR=/data \
